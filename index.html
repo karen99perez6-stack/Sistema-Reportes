@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Reportes y Estadísticas</title>
+    
+    <!-- Librería Chart.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .filtros {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .grafica-box {
+            position: relative;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Módulo de Reportes de Servicios</h1>
+        
+        <!-- Filtro sencillo para darle funcionalidad real de estudiante -->
+        <div class="filtros">
+            <label for="filtroAnio"><b>Seleccionar año:</b></label>
+            <select id="filtroAnio" onchange="actualizarReporte()">
+                <option value="2025">2025</option>
+                <option value="2026" selected>2026</option>
+            </select>
+        </div>
+
+        <!-- Contenedor de la gráfica -->
+        <div class="grafica-box">
+            <canvas id="graficaReporte"></canvas>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
